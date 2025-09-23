@@ -30,7 +30,7 @@ class AllRemindersScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final eventProvider = Provider.of<EventProvider>(context);
 
-    // Lista piatta di tutti i promemoria del conto
+    // Lista di tutti i promemoria del conto
     final allReminders = eventProvider
         .getAllRemindersForAccount(accountId)
         .entries
@@ -48,12 +48,11 @@ class AllRemindersScreen extends StatelessWidget {
     }).toList();
 
     return Scaffold(
-      // Sfondo gradiente azzurro
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Color.fromRGBO(154, 223, 255, 1), // Azzurro chiaro
+              Color.fromRGBO(154, 223, 255, 1),
               Color.fromRGBO(67, 196, 255, 1),],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,

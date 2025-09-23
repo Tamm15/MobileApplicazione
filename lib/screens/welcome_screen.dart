@@ -41,7 +41,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
 
     _controller.forward();
 
-    // Inizializza le monetine con posizioni casuali
+    // Inizializza le monetine
     for (int i = 0; i < numberOfCoins; i++) {
       _coins.add(CoinData(
         x: random.nextDouble(),
@@ -109,13 +109,12 @@ class _WelcomeScreenState extends State<WelcomeScreen>
     return Scaffold(
       body: Stack(
         children: [
-          // Sfondo gradiente dall’azzurro chiaro allo scuro
           Container(
             decoration: const BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  Color.fromRGBO(154, 223, 255, 1), // Azzurro chiaro
-                  Color.fromRGBO(0, 174, 255, 1), // Azzurro scuro
+                  Color.fromRGBO(154, 223, 255, 1),
+                  Color.fromRGBO(0, 174, 255, 1),
                 ],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
@@ -123,7 +122,6 @@ class _WelcomeScreenState extends State<WelcomeScreen>
             ),
           ),
 
-          // Monetine caduta casuale
           ..._coins.map((coin) {
             return Positioned(
               top: coin.y * screenSize.height,
@@ -135,8 +133,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
               ),
             );
           }).toList(),
-
-          // Contenuto centrale
+          
           Center(
             child: FadeTransition(
               opacity: _fadeAnimation,

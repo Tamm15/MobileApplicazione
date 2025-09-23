@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import 'providers/account_provider.dart';
 import 'providers/event_provider.dart';
 import 'providers/category_provider.dart';
-import 'providers/saving_provider.dart'; // <- Import nuovo
+import 'providers/saving_provider.dart';
 import 'screens/welcome_screen.dart';
 
 void main() {
@@ -14,7 +14,7 @@ void main() {
         ChangeNotifierProvider(create: (_) => AccountProvider()),
         ChangeNotifierProvider(create: (_) => EventProvider()),
         ChangeNotifierProvider(create: (_) => CategoryProvider()),
-        ChangeNotifierProvider(create: (_) => SavingProvider()), // <- Aggiunto
+        ChangeNotifierProvider(create: (_) => SavingProvider()),
         ChangeNotifierProvider(create: (_) => DeadlineProvider()),
 
       ],
@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: WelcomeScreen(), // <- Mostra prima la WelcomeScreen
+      home: WelcomeScreen(),
     );
   }
 }
